@@ -24,7 +24,7 @@ RSpec.describe User, type: :model do
       @user_another = User.new(first_name:'Beast',last_name:'LeBlanc', email:'belle@gmail.com',password:'12345',password_confirmation:'12345')
       @user_another.save
 
-      expect(User.where(email:'belle@gmail.COM').count).to eq(1)
+      expect(User.where(email:'belle@gmail.com').count).to eq(1)
     end
 
     it "should not register if first name is invalid" do
@@ -73,12 +73,12 @@ RSpec.describe User, type: :model do
       expect(User.authenticate_with_credentials('bell@gmail.com','12345')).to eq(nil)
     end
 
-    it 'should authenticate users if email even if it has blank spaces' do
-      @user = User.new(first_name:'Belle',last_name:'LeBlanc', email:'belle@gmail.com',password:'12345',password_confirmation:'12345')
+    it 'should authenticate users if email even if the case of the email is different' do
+      @user = User.new(first_name:'Belle',last_name:'LeBlanc', email:'bElle@gmail.com',password:'12345',password_confirmation:'12345')
 
       @user.save
 
-      expect(User.authenticate_with_credentials(' belle@gmail.com ','12345')).to eq(@user)
+      expect(User.authenticate_with_credentials('BellE@gmail.Com','12345')).to eq(@user)
       
     end
 
