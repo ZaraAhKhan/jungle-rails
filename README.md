@@ -4,7 +4,9 @@ A mini e-commerce application built with Ruby and Rails 4.2.
 
 ## App Overview
 
+![home page](https://github.com/ZaraAhKhan/jungle-rails/blob/master/docs/jungle_home_page.png?raw=true)
 
+![products page](https://github.com/ZaraAhKhan/jungle-rails/blob/master/docs/jungle_products_page.png?raw=true)
 
 ## Additional Steps for Apple M1 Machines
 
